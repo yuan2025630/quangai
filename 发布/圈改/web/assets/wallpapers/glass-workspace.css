@@ -1,0 +1,59 @@
+/* One translucent surface spans the complete workspace chrome. Image pixels
+   remain in their own untouched canvas; these rules only style UI containers. */
+:root {
+  --glass-surface: rgb(249 253 247 / 65%);
+  --control-surface: rgb(255 255 255 / 42%);
+  --control-primary-surface: linear-gradient(160deg, rgb(39 116 84 / 86%), rgb(17 87 63 / 86%));
+  --color-selected: rgb(229 246 233 / 52%);
+  --glass-border: rgb(255 255 255 / 42%);
+  --color-muted: #375a48;
+}
+.project-tabs, .workspace-nav, .tool-rail, .notes-panel,
+.canvas-heading, .canvas-footer, dialog {
+  background: var(--glass-surface);
+  -webkit-backdrop-filter: blur(var(--wallpaper-glass-blur, 18px)) saturate(115%);
+  backdrop-filter: blur(var(--wallpaper-glass-blur, 18px)) saturate(115%);
+  border-color: var(--glass-border);
+}
+.project-tab { background: rgb(255 255 255 / 12%); }
+.project-tab.active { background: rgb(237 250 240 / 32%); }
+.project-tab.active, .project-tabs-brand, .workspace-nav,
+.notes-heading, .canvas-footer { text-shadow: 0 1px 1px #ffffff50; }
+.notes-heading, .notes-list, .general-note, .local-note,
+.notes-footer, .sidebar-footer, .comparison-summary { background: transparent; }
+.note-inspector { background: rgb(255 255 255 / 18%); border-color: var(--glass-border); }
+.notes-panel .note-card { background: rgb(255 255 255 / 26%); }
+.notes-panel .note-card.selected { background: rgb(227 246 233 / 48%); }
+.note-inspector textarea, .note-inspector select, .coordinate-fields input,
+.general-note textarea, .project-title, .project-tab-rename {
+  background: rgb(255 255 255 / 45%);
+  color: #173d31;
+  border-color: rgb(55 94 70 / 28%);
+}
+.button.subtle, .text-button, .icon-button, .tool-button,
+.mode-tab, .image-tab { background: var(--control-surface); }
+.tool-button.active, .mode-tab.active, .button.primary {
+  background: var(--control-primary-surface);
+  color: white;
+  text-shadow: none;
+}
+.image-tabs, .zoom-controls { background: rgb(23 67 45 / 10%); }
+.image-tab.active { background: rgb(255 255 255 / 50%); }
+:is(.button.subtle,.text-button,.icon-button,.tool-button,.mode-tab,.image-tab):hover:not(:disabled,.active,:active) {
+  background: rgb(255 255 255 / 64%);
+}
+:is(.button.primary,.tool-button.active,.mode-tab.active):hover:not(:disabled,:active) {
+  background: linear-gradient(160deg, rgb(34 107 77 / 92%), rgb(16 81 57 / 92%));
+}
+.window-control, .project-tab-select, .project-tab-close,
+.project-tab-add, .notes-heading-actions .icon-button { background: transparent; }
+.window-control:hover { background: rgb(255 255 255 / 30%); }
+.window-close:hover, .window-close:active { background: rgb(196 43 28 / 90%); color: white; }
+.wallpaper-dialog .wallpaper-tabs { background: rgb(23 67 45 / 12%); }
+.wallpaper-dialog .wallpaper-tabs button[aria-selected="true"] { background: rgb(255 255 255 / 58%); }
+.wallpaper-dialog .wallpaper-card { background: rgb(255 255 255 / 28%); }
+.wallpaper-dialog .wallpaper-choice { background: transparent; }
+.wallpaper-dialog input[type="search"], .wallpaper-dialog input[type="number"],
+.wallpaper-dialog select, .wallpaper-library-actions button, .wallpaper-presets button {
+  background: rgb(255 255 255 / 55%);
+}

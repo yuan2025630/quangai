@@ -1,0 +1,165 @@
+/* Hallmark · pre-emit critique: P4 H5 E4 S5 R4 V4
+   A compact workbench keeps the picture central and separates actions from settings. */
+:root {
+  --workspace-surface: color-mix(in srgb, var(--glass-surface) 35%, #fbfcf9 65%);
+  --workspace-rule: rgb(33 53 44 / 14%);
+  --workspace-hover: rgb(22 102 83 / 8%);
+  --control-radius: 6px;
+  --control-pill-radius: 6px;
+}
+html, body { overflow-x: clip; }
+.workspace-nav, .tool-rail, .notes-panel, .canvas-heading, .canvas-footer {
+  background: var(--workspace-surface);
+}
+.workspace-nav, .tool-rail, .notes-panel { border-color: var(--workspace-rule); }
+.workspace-nav :is(.text-button, .button), .canvas-heading :is(.text-button, .image-tab), .tool-button {
+  box-shadow: none;
+}
+.workspace-nav .file-actions .text-button { background: transparent; border-color: transparent; }
+.workspace-nav .button.primary { background: var(--color-primary); }
+.workspace-nav .button.subtle { background: transparent; border-color: var(--workspace-rule); }
+.workspace-nav .mode-tab { background: transparent; border-color: transparent; box-shadow: none; border-radius: 6px; }
+.workspace-nav .mode-tab.active { background: var(--workspace-hover); color: var(--color-primary); }
+.workspace-nav .mode-tab .step-number { background: transparent; border-radius: 4px; font-variant-numeric: tabular-nums; }
+.workspace-nav .mode-tab.active .step-number { color: var(--color-primary); }
+.tool-button { position: relative; background: transparent; border-color: transparent; }
+.tool-button.active { background: var(--color-primary); box-shadow: none; }
+.tool-button:hover:not(:disabled,.active) { background: var(--workspace-hover); }
+.canvas-heading .image-tabs { border: 0; box-shadow: none; border-radius: 6px; padding: 2px; }
+.canvas-heading .image-tab { background: transparent; border-radius: 4px; }
+.canvas-heading .image-tab.active { background: var(--color-surface); }
+.canvas-heading .zoom-controls { border: 0; background: transparent; box-shadow: none; }
+.canvas-heading .zoom-step { width: 28px; min-width: 28px; font-size: 0; gap: 0; padding: 0; }
+.canvas-heading .zoom-fit { min-width: 76px; }
+.canvas-heading .workspace-focus { background: transparent; border-color: var(--workspace-rule); white-space: nowrap; }
+.canvas-heading .workspace-focus[aria-pressed="true"] { color: var(--color-primary); background: var(--workspace-hover); }
+.notes-heading h2 span { border-radius: 4px; font-variant-numeric: tabular-nums; }
+.notes-list { padding: 0 12px 12px; }
+.notes-panel .note-card { background: transparent; border: 0; border-bottom: 1px solid var(--workspace-rule); border-radius: 0; padding: 12px 10px; }
+.notes-panel .note-card:hover { background: var(--workspace-hover); }
+.notes-panel .note-card.selected { background: var(--color-selected); border-radius: 6px; box-shadow: inset 3px 0 var(--color-primary); }
+.note-card .note-number { border-radius: 4px; font-variant-numeric: tabular-nums; }
+.note-card .note-status { background: rgb(92 107 98 / 8%); border: 0; border-radius: 4px; font-size: 11px; }
+.note-card.accepted .note-status { color: #105141; background: #e4f1e9; }
+.note-card.changes .note-status { color: #8c321d; background: #fbeae2; }
+.note-card .note-card-text { font-size: 13px; line-height: 1.65; }
+.note-card .note-card-meta { font-size: 11px; }
+.notes-panel .note-inspector { background: rgb(255 255 255 / 55%); border-top: 1px solid var(--workspace-rule); }
+.notes-panel .general-note, .notes-panel .local-note { border-color: var(--workspace-rule); }
+.notes-panel .empty-note-mark { display: none; }
+.notes-panel .notes-empty { padding: 28px 18px; }
+.notes-panel .notes-empty strong { font-size: 16px; }
+.notes-panel .notes-empty p { font-size: 13px; line-height: 1.75; }
+.notes-panel .notes-empty small { font-size: 11px; }
+.notes-panel:has(.note-card) .notes-heading p { display: none; }
+.notes-panel .notes-heading, .notes-panel .general-note, .notes-panel .local-note { flex-shrink: 0; }
+.notes-panel .notes-list { flex: 1 1 140px; min-height: 72px; }
+.notes-panel .note-inspector { flex: 0 1 auto; min-height: 0; overflow-y: auto; }
+.note-inspector textarea { min-height: 80px; }
+.toast { font-size: 12px; max-width: min(460px, calc(100vw - 32px)); padding: 10px 14px; border-radius: 8px; pointer-events: none; }
+.note-filters { flex: 0 0 auto; padding: 0 16px 10px; }
+.note-filter-fields { display: grid; grid-template-columns: minmax(0, 1fr) 100px; gap: 6px; }
+.note-filter-fields :is(input, select) { width: 100%; min-width: 0; height: 32px; border: 1px solid var(--workspace-rule); border-radius: 6px; background: rgb(255 255 255 / 70%); padding: 0 8px; font-size: 12px; }
+.note-filter-summary { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; min-height: 20px; font-size: 11px; color: var(--color-muted); }
+.note-filter-clear { color: var(--color-primary); padding: 2px 0; font-size: 11px; }
+.note-filter-empty { flex: 1; padding: 24px 16px; font-size: 13px; }
+.note-filter-empty p { margin: 8px 0 16px; color: var(--color-muted); line-height: 1.7; }
+.workspace-more-menu { width: 200px; margin: 0; padding: 6px; inset: auto; border: 1px solid var(--workspace-rule); border-radius: 8px; background: #f9fbf7; color: var(--color-text); box-shadow: 0 8px 24px rgb(20 45 32 / 15%); }
+.workspace-more-menu .text-button { width: 100%; min-height: 36px; justify-content: flex-start; border: 0; border-radius: 4px; background: transparent; box-shadow: none; font-size: 13px; }
+.workspace-more-menu .text-button:hover { background: var(--workspace-hover); }
+.workspace.is-canvas-focused { grid-template-columns: minmax(0, 1fr); }
+.workspace.is-canvas-focused :is(.tool-rail, .notes-panel, .sidebar-resizer) { display: none; }
+@media (min-width: 781px) {
+  #app.has-project-tabs { grid-template-rows: 34px 42px minmax(0, 1fr); }
+  .project-tabs { padding-left: 10px; }
+  .project-tabs-brand { gap: 5px; padding-right: 6px; }
+  .project-tabs-brand img { width: 16px; height: 16px; }
+  .project-tab-list { width: calc(var(--project-tab-count, 1) * 140px + (var(--project-tab-count, 1) - 1) * var(--tab-gap)); }
+  .project-tab { height: 30px; max-width: 140px; }
+  .project-tab-close { top: 2px; }
+  .window-control { width: 40px; }
+
+  .workspace-nav { gap: 14px; padding-inline: 8px 12px; }
+  .mode-tabs { gap: 4px; }
+  .mode-tab { height: 30px; gap: 6px; padding-inline: 5px 10px; }
+  .mode-tab span { font-size: 12px; }
+  .mode-tab .step-number { width: 20px; height: 20px; }
+  .file-actions { gap: 8px; }
+  .file-actions :is(.button, .text-button) {
+    min-height: 32px;
+    height: 32px;
+    gap: 6px;
+    padding: 4px 12px;
+    font-size: 12px;
+  }
+  .file-actions button > svg { width: 14px; height: 14px; }
+
+  .workspace { --workspace-sidebar-width: var(--sidebar-width, 300px); grid-template-columns: 48px minmax(0, 1fr) var(--workspace-sidebar-width); }
+  .sidebar-resizer { right: calc(var(--workspace-sidebar-width) - 6px); }
+  .tool-rail { gap: 4px; padding: 8px 4px; }
+  .tool-button { min-height: 46px; gap: 3px; padding: 5px 2px; }
+  .tool-button > svg { width: 20px; height: 20px; }
+  .canvas-heading {
+    grid-template: "tabs zoom actions" auto / auto minmax(0, 1fr) auto;
+    gap: 8px;
+    min-height: 44px;
+    padding: 6px 12px;
+  }
+  .image-tabs { gap: 2px; padding: 2px; }
+  .image-tab { min-height: 28px; gap: 5px; padding: 3px 10px; }
+  .zoom-controls { width: auto; padding: 2px; justify-self: end; }
+  .zoom-controls :is(.icon-button, .text-button) { height: 28px; min-height: 28px; }
+  .zoom-controls .text-button { gap: 5px; padding: 3px 7px; }
+  .zoom-controls .zoom-step { min-width: 28px; gap: 0; padding: 0; }
+  .zoom-controls .zoom-fit { min-width: 76px; }
+  .canvas-actions .text-button { min-height: 30px; gap: 5px; padding: 4px 10px; }
+  .canvas-actions button > svg { width: 14px; height: 14px; }
+  .notes-heading { padding: 12px 16px 10px; }
+  .notes-heading h2 { font-size: 16px; }
+
+  @container (max-width: 520px) {
+    .canvas-heading {
+      grid-template: "tabs actions" 32px "zoom zoom" 32px / minmax(0, 1fr) auto;
+      gap: 4px;
+      min-height: 80px;
+    }
+    .zoom-controls { justify-self: stretch; justify-content: center; width: 100%; }
+  }
+}
+
+/* Native windows keep their workbench layout at high display scaling. */
+:root[data-window-state] #app.has-project-tabs { height: 100dvh; min-height: 0; grid-template-rows: 34px 42px minmax(0, 1fr); }
+:root[data-window-state] .workspace { --workspace-sidebar-width: var(--sidebar-width, 300px); grid-template-columns: 48px minmax(0, 1fr) var(--workspace-sidebar-width); min-height: 0; }
+:root[data-window-state] .sidebar-resizer { display: block; right: calc(var(--workspace-sidebar-width) - 6px); }
+:root[data-window-state] .tool-rail { flex-direction: column; grid-row: auto; min-height: 0; height: auto; gap: 4px; padding: 8px 4px; overflow: hidden auto; scrollbar-width: thin; border-right: 1px solid var(--workspace-rule); border-bottom: 0; }
+:root[data-window-state] .tool-button { flex-shrink: 0; min-width: 0; min-height: 46px; padding: 5px 2px; font-size: 10px; gap: 3px; }
+:root[data-window-state] .tool-button > svg { width: 18px; height: 18px; }
+:root[data-window-state] .rail-divider { width: auto; height: 1px; margin: 6px 7px; }
+:root[data-window-state] .keyboard-add { margin-top: auto; }
+:root[data-window-state] .canvas-panel { height: auto; min-height: 0; }
+:root[data-window-state] .notes-panel { grid-column: auto; min-height: 0; border-top: 0; }
+:root[data-window-state] .notes-list { max-height: none; min-height: 72px; }
+:root[data-window-state] .note-inspector { max-height: 55%; }
+:root[data-window-state] .workspace.is-canvas-focused { grid-template-columns: minmax(0, 1fr); }
+:root[data-window-state] .workspace.is-canvas-focused :is(.tool-rail, .notes-panel, .sidebar-resizer) { display: none; }
+@media (max-width: 780px) {
+  :root[data-window-state] .workspace-nav { flex-wrap: nowrap; gap: 8px; padding: 0 8px; }
+  :root[data-window-state] .mode-tabs { gap: 2px; height: auto; }
+  :root[data-window-state] .mode-tab { height: 30px; padding: 0 7px; gap: 5px; }
+  :root[data-window-state] .mode-tab span { font-size: 12px; }
+  :root[data-window-state] .mode-tab .step-number { width: 18px; height: 18px; }
+  :root[data-window-state] .file-actions { width: auto; height: auto; border: 0; gap: 3px; }
+  :root[data-window-state] .file-actions :is(.text-button, .button) { min-height: 30px; height: 30px; padding: 4px 7px; gap: 4px; font-size: 11px; }
+  :root[data-window-state] .file-actions button > svg { width: 13px; height: 13px; }
+  :root[data-window-state] .canvas-heading { grid-template: "tabs actions" 32px "zoom zoom" 28px / minmax(0, 1fr) auto; padding: 6px 8px; gap: 4px; min-height: 76px; }
+  :root[data-window-state] .canvas-heading .zoom-controls { width: auto; justify-self: center; }
+  :root[data-window-state] .canvas-heading :is(.text-button, .image-tab) { min-height: 28px; height: 28px; padding: 3px 6px; gap: 4px; font-size: 11px; }
+  :root[data-window-state] .canvas-heading .zoom-step { font-size: 0; min-width: 28px; width: 28px; padding: 0; }
+  :root[data-window-state] .canvas-heading .zoom-fit { min-width: 76px; }
+  :root[data-window-state] .canvas-actions { justify-self: end; margin-left: 0; gap: 4px; }
+  :root[data-window-state] .image-tabs { white-space: nowrap; }
+  :root[data-window-state] .image-tab { padding: 3px 6px; font-size: 11px; }
+  :root[data-window-state] .notes-heading { padding: 12px 16px 10px; }
+  :root[data-window-state] .notes-heading h2 { font-size: 16px; }
+  :root[data-window-state] .local-note .icon-button { width: 28px; height: 28px; }
+}

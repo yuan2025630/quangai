@@ -1,0 +1,10 @@
+{
+  "name": "webwallgl",
+  "version": "2.1.0",
+  "repository": "https://github.com/oneincase/webwallgl",
+  "upstreamCommit": "4ba71c406fbc78f24c99b1bb1edd9d9cef9793c8",
+  "distribution": "https://cdn.jsdelivr.net/npm/webwallgl@2.1.0/webwallgl.min.mjs",
+  "sha256": "217e54bdb1c3a7041c39bc8dd3fa4aff6333e8c6dcf87244c17504d1df9c2448",
+  "license": "MIT",
+  "referenceIntegration": "https://github.com/elysia395/dsh-wallpaper-engine"
+}

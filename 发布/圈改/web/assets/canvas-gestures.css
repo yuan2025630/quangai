@@ -1,0 +1,7 @@
+.canvas-viewport { overscroll-behavior: contain; }
+.artboard, .annotation-overlay { touch-action: none; }
+.canvas-viewport.is-pan-ready,
+.canvas-viewport.is-pan-ready :is(.artboard, svg, [data-note-id]) { cursor: grab; }
+.canvas-viewport.is-panning,
+.canvas-viewport.is-panning :is(.artboard, svg, [data-note-id]) { cursor: grabbing; user-select: none; }
+.canvas-viewport.is-drawing { user-select: none; }

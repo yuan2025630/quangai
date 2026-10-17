@@ -1,0 +1,37 @@
+@media (min-width: 781px) {
+  .workspace { grid-template-columns: 54px minmax(0, 1fr) var(--sidebar-width, clamp(330px, 26vw, 384px)); }
+  .tool-rail { padding: 10px 5px; }
+  .tool-button { min-width: 0; min-height: 58px; padding: 8px 2px; border-radius: 14px; }
+  .tool-button span { font-size: 12px; }
+}
+.selection-shape-menu {
+  position: fixed; inset: auto; margin: 0; width: 190px; padding: 8px;
+  border: 1px solid #dbe7df; border-radius: 18px; background: #fff;
+  color: #164f40; box-shadow: 0 8px 28px #123c292b; overflow: visible;
+}
+.selection-shape-menu::before {
+  content: ''; position: absolute; left: -7px; top: 24px; width: 12px; height: 12px;
+  transform: rotate(45deg); background: #fff; border-left: 1px solid #dbe7df; border-bottom: 1px solid #dbe7df;
+}
+.selection-shape-menu button {
+  display: flex; width: 100%; align-items: center; gap: 12px; min-height: 48px;
+  padding: 10px 12px; background: transparent; border: 0; border-radius: 10px;
+  color: inherit; font-size: 15px; font-weight: 600; cursor: pointer;
+}
+.selection-shape-menu button + button { border-top: 1px solid #edf1ee; }
+.selection-shape-menu button[aria-checked='true'] { background: #e3f5eb; }
+.selection-shape-menu button:hover { background: #edf7f1; }
+.selection-shape-menu button:focus-visible { outline: 2px solid #16755e; outline-offset: -2px; }
+.selection-shape-menu svg { width: 25px; height: 25px; flex-shrink: 0; }
+.shape-check { margin-left: auto; opacity: 0; }
+[aria-checked='true'] .shape-check { opacity: 1; }
+
+.selection-resize-handle {
+  fill: white; stroke: #16755e; stroke-width: 1.7; vector-effect: non-scaling-stroke;
+  pointer-events: all; touch-action: none;
+}
+.selection-resize-nw, .selection-resize-se { cursor: nwse-resize; }
+.selection-resize-ne, .selection-resize-sw { cursor: nesw-resize; }
+.selection-resize-n, .selection-resize-s { cursor: ns-resize; }
+.selection-resize-e, .selection-resize-w { cursor: ew-resize; }
+.is-adjusting-selection { user-select: none; }

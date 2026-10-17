@@ -1,0 +1,22 @@
+#unsaved-project-dialog {
+  width: min(440px, calc(100vw - 36px));
+}
+#unsaved-project-dialog .dialog-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+#unsaved-project-dialog h2 {
+  margin: 0;
+  font-size: 22px;
+}
+#unsaved-project-dialog p {
+  line-height: 1.8;
+  margin: 18px 0 26px;
+}
+#unsaved-project-dialog .dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}

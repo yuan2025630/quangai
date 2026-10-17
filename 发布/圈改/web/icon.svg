@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="tile" x1="30" y1="18" x2="214" y2="238" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#30967b"/>
+      <stop offset=".5" stop-color="#176b57"/>
+      <stop offset="1" stop-color="#0c3e35"/>
+    </linearGradient>
+    <radialGradient id="light" cx=".15" cy="0" r="1">
+      <stop stop-color="#acedd4" stop-opacity=".36"/>
+      <stop offset=".8" stop-color="#acedd4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rim" x2=".8" y2="1">
+      <stop stop-color="#d8fff0" stop-opacity=".65"/>
+      <stop offset=".5" stop-color="#d8fff0" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#071f1b" stop-opacity=".5"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="170" y1="135" x2="149" y2="206" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e6f6b1"/>
+      <stop offset="1" stop-color="#b9dd75"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#052a22" flood-opacity=".22"/>
+    </filter>
+    <clipPath id="tile-clip"><rect x="16" y="12" width="224" height="224" rx="54"/></clipPath>
+  </defs>
+  <rect x="19" y="24" width="218" height="219" rx="52" fill="#082d27" opacity=".16"/>
+  <rect x="16" y="12" width="224" height="224" rx="54" fill="url(#tile)"/>
+  <g clip-path="url(#tile-clip)">
+    <ellipse cx="96" cy="30" rx="188" ry="167" fill="url(#light)"/>
+    <path d="M17 71C22 36 41 16 76 14" fill="none" stroke="#e7fff3" stroke-opacity=".24" stroke-width="3"/>
+  </g>
+  <rect x="17.5" y="13.5" width="221" height="221" rx="52.5" fill="none" stroke="url(#rim)" stroke-width="1.5"/>
+  <g filter="url(#shadow)">
+    <path d="M139 177H101C79 177 63 161 63 139V103C63 81 79 65 101 65H137C159 65 175 81 175 103V120"
+      fill="none" stroke="#f5f5d8" stroke-width="16" stroke-linecap="round"/>
+    <path d="M127 179L172 134C177 129 184 129 189 134L200 145C205 150 205 157 200 162L155 207L123 211Z"
+      fill="url(#ink)" stroke="#f0f7cf" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M127 179L155 207L123 211Z" fill="#f5f5d8"/>
+    <path d="M124 202L132 210L123 211Z" fill="#164b3d"/>
+    <path d="M172 135L199 162" fill="none" stroke="#164b3d" stroke-opacity=".24" stroke-width="3"/>
+    <path d="M139 177L172 144" fill="none" stroke="#faffdf" stroke-opacity=".6" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

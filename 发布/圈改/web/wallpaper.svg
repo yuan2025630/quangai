@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="0 0 2560 1440">
+  <title>林间暮光</title>
+  <defs>
+    <linearGradient id="sky" x2=".25" y2="1">
+      <stop stop-color="#d8baab"/>
+      <stop offset=".3" stop-color="#eed4b7"/>
+      <stop offset=".67" stop-color="#c8dcd0"/>
+      <stop offset="1" stop-color="#80b4ab"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2=".35" y2="1">
+      <stop stop-color="#94c8ba"/>
+      <stop offset=".4" stop-color="#73b1a4"/>
+      <stop offset="1" stop-color="#2f7c72"/>
+    </linearGradient>
+    <linearGradient id="ridge" x2="1" y2=".4">
+      <stop stop-color="#608f88"/>
+      <stop offset="1" stop-color="#8faf9e"/>
+    </linearGradient>
+    <linearGradient id="bank" x2=".65" y2="1">
+      <stop stop-color="#316b62"/>
+      <stop offset="1" stop-color="#174c44"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="#fff0c9" stop-opacity=".82"/>
+      <stop offset=".45" stop-color="#ffe6ba" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#f3dab7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="reflection" x2=".15" y2="1">
+      <stop stop-color="#e9edd1" stop-opacity=".58"/>
+      <stop offset="1" stop-color="#d4e5c7" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="haze" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="cloud" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="12"/></filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".055"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="soft-light"/>
+    </filter>
+    <g id="pine">
+      <path d="M52 4C46 23 43 40 33 54L45 51C38 76 26 93 14 108L34 102C28 124 16 144 4 159L26 153C20 177 10 197 0 213L39 205L44 243H60L65 205L104 213C94 197 84 177 78 153L100 159C88 144 76 124 70 102L90 108C78 93 66 76 59 51L71 54C61 40 58 23 52 4Z"/>
+      <path d="M52 57V239" fill="none" stroke="#1d4d42" stroke-opacity=".35" stroke-width="3"/>
+    </g>
+    <g id="slender-pine">
+      <path d="M40 0C36 32 32 46 26 62L35 59C30 80 24 91 15 110L29 105C24 129 16 142 8 161L24 154C17 181 11 198 0 217L30 209L35 259H46L51 209L80 217C69 198 63 181 56 154L72 161C64 142 56 129 51 105L65 110C56 91 50 80 45 59L54 62C48 46 44 32 40 0Z"/>
+    </g>
+  </defs>
+  <rect width="2560" height="1440" fill="url(#sky)"/>
+  <ellipse cx="1960" cy="290" rx="710" ry="570" fill="url(#glow)"/>
+  <circle cx="1930" cy="338" r="63" fill="#ffefd0" opacity=".73"/>
+  <g fill="#f8e5cf" opacity=".38" filter="url(#cloud)">
+    <path d="M-80 222C132 179 240 226 345 208S568 160 752 203S1113 235 1284 195C1016 285 795 259 613 256S278 275-80 280Z"/>
+    <path d="M1465 136C1667 95 1764 123 1913 113S2246 64 2610 117V183C2263 177 2180 184 1950 172S1710 170 1465 136Z"/>
+    <path d="M1130 406C1280 377 1370 393 1468 382S1668 352 1810 390C1630 420 1530 420 1400 428S1220 427 1130 406Z"/>
+  </g>
+  <path d="M0 635C157 595 220 549 374 555S553 501 666 459S846 491 920 504S1047 454 1147 418S1320 491 1408 500S1555 422 1660 416S1814 487 1896 478S2151 530 2258 480S2465 437 2560 480V901H0Z" fill="#a4bfb1" opacity=".78"/>
+  <path d="M0 680C115 679 178 599 268 584S454 604 537 580S689 480 772 496S890 569 973 578S1070 550 1143 572S1271 649 1377 641S1572 547 1684 531S1795 568 1873 589S2117 539 2240 551S2468 516 2560 579V990H0Z" fill="url(#ridge)" opacity=".65"/>
+  <path d="M0 729C247 658 345 694 506 710S758 629 941 674S1266 787 1520 705S1843 684 2074 734S2350 676 2560 682V1440H0Z" fill="url(#water)"/>
+  <path d="M1630 713C1718 730 1836 741 1940 718C1994 904 2113 1056 2329 1440H1200C1515 1113 1605 966 1630 713Z" fill="url(#reflection)" opacity=".68"/>
+  <g fill="none" stroke="#d7e8cf" stroke-linecap="round" opacity=".23">
+    <path d="M1320 805C1525 788 1837 798 2090 804" stroke-width="3"/>
+    <path d="M1650 844H2203M1090 873H1704M1467 952H2053M1072 1081H1807M1710 1136H2326" stroke-width="2"/>
+    <path d="M1310 913H1453M1830 884H2120M1982 988H2224M1050 991H1254M1814 1228H2075M1230 1180H1438" stroke-width="4"/>
+  </g>
+  <path d="M0 685C270 693 334 720 495 701S741 735 950 743S1309 727 1510 716S1914 751 2140 725S2440 724 2560 741" fill="none" stroke="#dce8d7" stroke-width="24" opacity=".34" filter="url(#haze)"/>
+  <path d="M0 709C132 705 229 752 365 779S502 844 640 855S894 973 972 1017C700 995 506 1002 316 1090L0 1200Z" fill="#487f71"/>
+  <path d="M2560 664C2449 688 2355 741 2290 789S2146 827 2028 862S1886 935 1806 959C2025 941 2240 1075 2560 1202Z" fill="#55887a"/>
+  <g fill="#437b6c" opacity=".86">
+    <use href="#slender-pine" transform="translate(44 396) scale(1.4)"/>
+    <use href="#pine" transform="translate(181 456) scale(1.12)"/>
+    <use href="#slender-pine" transform="translate(313 502) scale(1.1)"/>
+    <use href="#pine" transform="translate(419 570) scale(1.03)"/>
+    <use href="#slender-pine" transform="translate(537 627) scale(.91)"/>
+    <use href="#pine" transform="translate(2231 465) scale(1.3)"/>
+    <use href="#slender-pine" transform="translate(2365 339) scale(1.65)"/>
+    <use href="#pine" transform="translate(2440 359) scale(1.75)"/>
+    <use href="#slender-pine" transform="translate(2151 535) scale(1.08)"/>
+    <use href="#pine" transform="translate(2049 606) scale(.86)"/>
+  </g>
+  <path d="M0 873C185 827 279 910 390 937S596 1001 740 1053S797 1106 1014 1188C726 1153 435 1274 280 1440H0Z" fill="url(#bank)"/>
+  <path d="M2560 869C2411 845 2284 918 2185 950S2044 1046 1937 1083C2050 1088 2239 1246 2244 1440H2560Z" fill="url(#bank)"/>
+  <g fill="#235c50">
+    <use href="#pine" transform="translate(-61 344) scale(2.5)"/>
+    <use href="#slender-pine" transform="translate(153 488) scale(1.88)"/>
+    <use href="#pine" transform="translate(280 605) scale(1.65)"/>
+    <use href="#slender-pine" transform="translate(459 701) scale(1.5)"/>
+    <use href="#pine" transform="translate(585 806) scale(1.13)"/>
+    <use href="#slender-pine" transform="translate(2463 301) scale(2.65)"/>
+    <use href="#pine" transform="translate(2281 495) scale(2.1)"/>
+    <use href="#slender-pine" transform="translate(2170 617) scale(1.62)"/>
+    <use href="#pine" transform="translate(2071 755) scale(1.27)"/>
+  </g>
+  <g fill="#174a41">
+    <use href="#pine" transform="translate(-94 693) scale(3.1)"/>
+    <use href="#slender-pine" transform="translate(149 802) scale(2.32)"/>
+    <use href="#pine" transform="translate(295 960) scale(1.88)"/>
+    <use href="#slender-pine" transform="translate(459 1049) scale(1.6)"/>
+    <use href="#pine" transform="translate(2437 616) scale(3.2)"/>
+    <use href="#slender-pine" transform="translate(2302 848) scale(2.45)"/>
+    <use href="#pine" transform="translate(2145 1022) scale(1.98)"/>
+  </g>
+  <path d="M0 1269C174 1285 215 1321 360 1357S507 1410 662 1440H0ZM2560 1261C2453 1272 2322 1322 2190 1381L2099 1440H2560Z" fill="#113f39"/>
+  <rect width="2560" height="1440" fill="transparent" filter="url(#grain)" opacity=".65"/>
+</svg>

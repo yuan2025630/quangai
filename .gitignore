@@ -1,0 +1,36 @@
+# Windows release executable is distributed through GitHub Releases.
+/发布/圈改/圈改.exe
+*.zip
+/output/
+/.hallmark/
+
+# Personal wallpaper media stays local and is excluded from public builds.
+/发布/圈改/web/wallpapers/
+
+# Build output, dependencies, and local tools.
+bin/
+obj/
+node_modules/
+.vs/
+.idea/
+.vscode/
+.playwright-cli/
+*.user
+*.suo
+*.log
+*.tmp
+Thumbs.db
+.DS_Store
+
+# Credentials, browser profiles, and personal project/session data.
+.env
+.env.*
+*.pfx
+*.p12
+*.key
+*.pem
+WebView/
+*.quangai.json
+agent-session.json
+agent-workspace-locations.json
+file-picker-locations.json
